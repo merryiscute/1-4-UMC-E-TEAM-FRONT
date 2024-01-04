@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
-
 // components 임포트
 import Header from '../components/header';
 
@@ -38,22 +37,8 @@ export default function Detail() {
         tags: apiData.tag,
       });
 
-      setCombinationData(
-        apiData.liquorCombiPostDTOList.map((item) => ({
-          id: item.id,
-          name: item.title,
-          hearts: item.likes,
-          tag: item.tag,
-        }))
-      );
-      setFoodData(
-        apiData.liquorFoodPostDTOList.map((item) => ({
-          id: item.id,
-          name: item.title,
-          hearts: item.likes,
-          tag: item.tag,
-        }))
-      );
+      setCombinationData(apiData.liquorCombiPostDTOList);
+      setFoodData(apiData.liquorFoodPostDTOList);
       setIsLoading(false);
     } catch (e) {
       console.log(e);

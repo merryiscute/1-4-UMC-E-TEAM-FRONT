@@ -2,11 +2,35 @@ import '../styles/slider.css';
 
 import React, { useState } from 'react';
 
-export default function Slider() {
+export default function Slider(props) {
+  console.log(props)
+  
   const [selectedDrink, setSelectedDrink] = useState('all');
   const [selectedDetail, setSelectedDetail] = useState('');
 
+  function categoryUpdate(){
+    if(selectedDrink == "soju")
+    {props.setCategory(1)}
+    if(selectedDrink == "beer")
+    {props.setCategory(2)}
+    if(selectedDrink == "liquor")
+    {
+      if(selectedDetail == "whisky")
+      {props.setCategory(3)}
+      if(selectedDetail == "wine")
+      {props.setCategory(4)}
+      if(selectedDetail == "gin")
+      {props.setCategory(5)}
+      if(selectedDetail == "tequila")
+      {props.setCategory(6)}
+    }
+    if(selectedDrink == "etc")
+    {props.setCategory(7)}
+    
+  }
+
   const handleDrinkChange = (event) => {
+    categoryUpdate();
     setSelectedDrink(event.target.value);
     if (event.target.value === 'etc') {
       setSelectedDetail('makgeolli');
@@ -16,6 +40,7 @@ export default function Slider() {
   };
 
   const handleDetailChange = (event) => {
+    categoryUpdate();
     setSelectedDetail(event.target.value);
   };
 

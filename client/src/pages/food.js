@@ -43,6 +43,7 @@ export default function Food() {
         <div className="contents">
           {data.map((key, index) => {
             return (
+
               <Link to="/Food_detail" state={data[index].liquorFood_Id}>
                 <Contents data={data[index]}></Contents>
               </Link>
