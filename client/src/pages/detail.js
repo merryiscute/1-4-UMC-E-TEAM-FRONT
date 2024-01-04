@@ -12,7 +12,7 @@ import '../styles/header.css';
 export default function Detail() {
   const location = useLocation();
   const data = location.state;
-  console.log(data);
+  console.log('hidata: ', data);
 
   const [drinkData, setDrinkData] = useState(null);
   const [combinationData, setCombinationData] = useState([]);
@@ -79,10 +79,8 @@ export default function Detail() {
           {combinationData.map((item) => (
             <Link
               key={item.id}
-              to={{
-                pathname: `/Drink_detail/${item.id}`,
-                state: { itemId: item.id },
-              }}
+              to={`/Drink_detail`}
+              state={item.id}
               className="TableViewCellLink"
             >
               <div key={item.id} className="TableViewCellDiv">
@@ -118,10 +116,8 @@ export default function Detail() {
           {foodData.map((item) => (
             <Link
               key={item.id}
-              to={{
-                pathname: `/Food_detail/${item.id}`,
-                state: { itemId: item.id },
-              }}
+              to={`/Food_detail`}
+              state={item.id}
               className="TableViewCellLink"
             >
               <div key={item.id} className="TableViewCellDiv">

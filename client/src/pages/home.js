@@ -46,13 +46,20 @@ export function Home() {
           <img src="img/Search.png" />
         </div>
       </div>
-      <div className='slider'><Slider category={category} setCategory={setCategory}></Slider></div>
-      <div className='contents_container'>
-        <div className='contents'>
-          {data.map((key,index)=>{
-            return(
-              <Link to={'/detail'} state={data[index].liquor_Id}><Contents data={data[index]}></Contents></Link>
-            )
+      <div className="slider"></div>
+      <div className="contents_container">
+        <div className="contents">
+          {data.map((key, index) => {
+            return (
+              <Link
+                to={{
+                  pathname: '/detail',
+                  state: { liquorId: data[index].liquor_Id },
+                }}
+              >
+                <Contents data={data[index]}></Contents>
+              </Link>
+            );
           })}
         </div>
       </div>
