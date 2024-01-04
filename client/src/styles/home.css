@@ -1,0 +1,41 @@
+
+.home{
+    margin-left: 13px;
+    width: 368px;
+    height: 580px;
+    background-color: rgba(255,179,35,0.5);
+    border-radius: 20px;
+}
+
+.home .contents{
+    display: grid;
+    grid-template-columns: 159px 159px;
+}
+
+.home .contents .img{
+    width: 147px; 
+    height: 166px;
+}
+
+
+.home .contents .name{
+    font-size: 15px;
+    font-weight: bold;   
+}
+
+.home .contents .percent{
+    font-size: 10px;
+    font-weight: bold;   
+}
+
+.home .contents .percent{
+    font-size: 10px;
+}
+
+.home .contents .price_volume{
+    font-size: 16px;
+}
+
+.contents .tag{
+    font-size: 10px;
+}
