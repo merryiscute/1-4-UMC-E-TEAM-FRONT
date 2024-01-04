@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // components 임포트
 import Header from '../components/header';
+import Slider from '../components/slider';
 
 // css 임포트
 import '../styles/write.css';
@@ -187,7 +188,8 @@ export default function Write() {
         </label>
       </div>
       <div className="Guide">메인이 되는 주종을 선택해주세요.</div>
-      <div className="optionDiv">
+      <Slider></Slider>
+      {/* <div className="optionDiv">
         <div className="selectAlcohol">
           <select
             value={selectedMainOptions}
@@ -213,8 +215,8 @@ export default function Write() {
               <option value={selectedSubOptions}>{selectedSubOptions}</option>
             )}
           </select>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       <input
         value={ingredient}
         type="text"

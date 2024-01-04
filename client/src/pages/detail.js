@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {useLocation} from 'react-router-dom';
+
 // components 임포트
 import Header from '../components/header';
 
@@ -14,39 +14,8 @@ export default function Detail() {
   const [foodData, setFoodData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const data = useLocation();
-  console.log(data)
-
   useEffect(() => {
-    // 가상의 API 응답 데이터
-    const fakeDrinkApiResponse = {
-      id: 1,
-      name: '켈리',
-      alcohol: 4.5,
-      price: '500ml 1550원',
-      description:
-        '화이트 진로에서 2023년 4월 4일에 출시한 울몰트 라거 맥주이다. 알코올 도수는 4.5%',
-      image:
-        'https://cdn.designhouse.co.kr/cms/img/2023/06/M.1685668349.5849.5.jpg',
-      tags: '#맥주 #올몰트라거 #가성비',
-    };
-    const fakeCombinationApiResponse = [
-      { id: 1, name: '소주 + 맥주', hearts: 32, tag: '#맥주일까 #소주일까' },
-      { id: 1, name: '맥주 + 콜라', hearts: 32, tag: '#맥주 #소주' },
-      { id: 1, name: '맥주 + 맥주', hearts: 32, tag: '#맥주 #소주' },
-      { id: 1, name: '맥주 + 사이다', hearts: 32, tag: '#맥주 #소주' },
-    ];
-    const fakeFoodApiResponse = [
-      { id: 1, name: '양파튀김', hearts: 32, tag: '#맥주 #소주' },
-      { id: 1, name: '양파감자', hearts: 32, tag: '#맥주 #소주' },
-      { id: 1, name: '양파쿵야', hearts: 32, tag: '#맥주 #소주' },
-      { id: 1, name: '양파파채', hearts: 32, tag: '#맥주 #소주' },
-    ];
-
-    setDrinkData(fakeDrinkApiResponse);
-    setCombinationData(fakeCombinationApiResponse);
-    setFoodData(fakeFoodApiResponse);
-    setIsLoading(false);
+    getValue();
   }, []);
 
   if (isLoading) {

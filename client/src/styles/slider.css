@@ -1,0 +1,40 @@
+.select-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.select-name {
+  border-radius: 60px;
+  background: #ffb323;
+  width: 60px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-select,
+.detail-select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 93.1px 0px 0px 93.1px;
+  background: #d9d9d9;
+}
+
+.detail-select {
+  margin-left: 15%;
+}
+
+select {
+  background: #d9d9d9;
+  border: none;
+  font-weight: bold;
+}
