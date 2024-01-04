@@ -1,0 +1,123 @@
+/* .Container {
+
+} */
+
+.MainContainer {
+  padding: 0px 0px 10px 0px;
+  border-radius: 10px;
+  margin: 13px;
+  box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.15);
+}
+.InMainContainer {
+  display: flex;
+  flex-direction: row;
+}
+.DrinkImg {
+  width: 147px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+}
+.DrinkScript {
+  margin: 10px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.DrinkScript span {
+  text-align: left;
+  margin-right: 10px;
+}
+
+.DrinkName {
+  margin: 3px 3px 10px 3px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.DrinkDetail {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffb323;
+}
+
+.DrinkDetailScript {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.HashNames {
+  margin: 3px 10px 0px 10px;
+  text-align: left;
+}
+.HashName {
+  color: #ffb323;
+}
+
+.SubContainer {
+  margin: 30px 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SubTitle {
+  width: 185px;
+  height: 29.751px;
+  border-radius: 100px;
+  background: #ffb323;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.TableViewDiv {
+  background-color: transparent;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.TableViewCellDiv {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 159px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.TableViewCellSpanDiv {
+  width: 159px;
+  position: relative;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CellDrinkImg {
+  width: 144px;
+  height: 104px;
+  border-radius: 10px;
+  position: absolute;
+  top: -40px;
+  left: 8px;
+}
+.CellDrinkName {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 140%;
+}
+.CellHeart {
+  color: #000;
+  font-family: Noto Sans KR;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.78px;
+}
