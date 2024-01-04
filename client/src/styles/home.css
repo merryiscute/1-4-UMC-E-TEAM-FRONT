@@ -1,0 +1,87 @@
+
+
+.home .search{
+    margin-top: 22px;
+    background-color: rgba(229,229,229,46%);
+    width: 353px;
+    height: 54px; 
+    display: flex;
+    margin-left: 20px;
+    
+    border-radius: 50px;
+}
+
+.home .search .input{
+    width: 240px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.home .search .search_icon{
+    margin-top: 12px;
+    margin-left:15px;
+}
+
+
+.home .slider{
+    background-color: #D9D9D9;
+    width: 147px;
+    height: 29.4px;
+    margin-left: 122px;
+    margin-top: 22px;
+}
+
+
+.home .contents_container{
+    margin-left: 13px;
+    margin-top: 13.6px;
+    width: 368px;
+    height: 550px;
+    background-color: rgba(255,179,35,0.5);
+    border-radius: 20px;
+}
+
+.home .contents_container .contents{
+    
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: 159px 159px;
+}
+
+.home .contents .img{
+    margin-top: 20px;
+    width: 147px; 
+    height: 166px;
+}
+
+.home .contents .data_container{
+    margin-left: 4px;
+    width: 150px;
+    height: 80px;
+    background-color: white;
+}
+
+
+.home .contents .name{
+    font-size: 15px;
+    font-weight: bold;   
+}
+
+.home .contents .percent{
+    font-size: 10px;
+    font-weight: bold;   
+}
+
+.home .contents .percent{
+    font-size: 10px;
+}
+
+.home .contents .price_volume{
+    font-size: 16px;
+}
+
+.contents .tag{
+    font-size: 10px;
+}
