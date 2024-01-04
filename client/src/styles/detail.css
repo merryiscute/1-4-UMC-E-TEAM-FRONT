@@ -78,6 +78,11 @@
   white-space: nowrap;
 }
 
+.TableViewCellLink {
+  color: inherit;
+  text-decoration: none;
+}
+
 .TableViewCellDiv {
   margin-right: 10px;
   margin-bottom: 10px;
