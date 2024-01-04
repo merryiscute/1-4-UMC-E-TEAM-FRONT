@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
-
+import { useLocation } from 'react-router-dom';
 // components 임포트
 import Header from '../components/header';
 

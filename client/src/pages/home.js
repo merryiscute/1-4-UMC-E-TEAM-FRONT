@@ -6,10 +6,14 @@ import { Link } from 'react-router-dom';
 import Slider from '../components/slider';
 
 export function Home() {
+
+  
+  const [category,setCategory] = useState(3);
+
   const axios = require('axios');
   async function getValue() {
     try {
-      const response = await Axios.get('http://3.39.93.237/liquor');
+      const response = await Axios.get(`http://3.39.93.237/liquor/category/${category}`);
       console.log(response.data.result);
       setData(response.data.result);
     } catch (e) {
@@ -19,7 +23,11 @@ export function Home() {
 
   useEffect(() => {
     getValue();
-  }, []);
+  },);
+  
+  useEffect(() => {
+    console.log(category)
+  },[category]);
 
   const [data, setData] = useState([]);
 
@@ -38,12 +46,12 @@ export function Home() {
           <img src="img/Search.png" />
         </div>
       </div>
-      <div className='slider'></div>
+      <div className='slider'><Slider category={category} setCategory={setCategory}></Slider></div>
       <div className='contents_container'>
         <div className='contents'>
           {data.map((key,index)=>{
             return(
-              <Link to={{pathname:'/detail', state:data[index].liquor_Id}}><Contents data={data[index]}></Contents></Link>
+              <Link to={'/detail'} state={data[index].liquor_Id}><Contents data={data[index]}></Contents></Link>
             )
           })}
         </div>
@@ -60,7 +68,7 @@ export function Home() {
 function Contents({ data }) {
   return (
     <div className="comContents">
-      <img className="img" src={data.img} />
+      <img className="img" src={data.picture}/>
       <div className="data_container">
         <div className="name">{data.name}</div>
         <div className="percent">{data.percent}</div>

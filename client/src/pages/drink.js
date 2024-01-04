@@ -73,7 +73,7 @@ export function Drink() {
         <div className="contents">
           {data.map((key, index) => {
             return (
-              <Link to="/write_detail">
+              <Link to="/drink_detail">
                 <Contents data={data[index]}></Contents>
               </Link>
             );

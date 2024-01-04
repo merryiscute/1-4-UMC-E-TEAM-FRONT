@@ -43,7 +43,7 @@ export default function Food() {
         <div className="contents">
           {data.map((key, index) => {
             return (
-              <Link to="/write_detail">
+              <Link to="/food_detail">
                 <Contents data={data[index]}></Contents>
               </Link>
             );
