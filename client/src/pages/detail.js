@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import {useLocation} from 'react-router-dom';
 // components 임포트
 import Header from '../components/header';
 
@@ -13,6 +13,9 @@ export default function Detail() {
   const [combinationData, setCombinationData] = useState([]);
   const [foodData, setFoodData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const data = useLocation();
+  console.log(data)
 
   useEffect(() => {
     // 가상의 API 응답 데이터

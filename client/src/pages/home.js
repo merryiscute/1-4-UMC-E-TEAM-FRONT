@@ -35,7 +35,7 @@ useEffect(()=>{
         <div className='contents'>
           {data.map((key,index)=>{
             return(
-              <Link to={{pathname:'/detail', state:data[index].liquor_Id}}><Contents data={data[index]}></Contents></Link>
+              <Link to={'/detail'} state={{name:"이하은"}}><Contents data={data[index]}></Contents></Link>
             )
           })}
         </div>
