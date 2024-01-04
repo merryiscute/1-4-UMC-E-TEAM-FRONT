@@ -1,0 +1,128 @@
+.Container {
+  padding: 0px 13px;
+}
+
+.ButtonDiv {
+  margin: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+.xButton {
+  border: none;
+  background: none;
+  font-size: 20px;
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  margin: 0;
+  border-radius: 100px;
+}
+
+.completeButton {
+  border: none;
+  background: #fbde3f;
+  width: 63px;
+  height: 33px;
+  font-size: 17px;
+  border-radius: 100px;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.3s ease-out;
+}
+
+.completeButton:active,
+.xButton:active,
+.selectedImageBtn:active {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.TitleInput {
+  margin: 13px;
+  padding: 10px;
+  width: 90%;
+  border: none;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.CheckboxDiv {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 13px;
+  margin-top: 0px;
+}
+
+.Guide {
+  color: rgba(0, 0, 0, 0.44);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.44px;
+  margin-bottom: 13px;
+}
+
+.optionDiv {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 13px;
+}
+/* 
+.selectAlcohol {
+
+}
+.selectIngredient {
+
+}
+*/
+.selectIngredient {
+  margin-bottom: 13px;
+  padding: 10px;
+  width: 90%;
+  border: none;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+}
+
+.putContent {
+  border: none;
+  background: none;
+  font-size: 15px;
+  margin-bottom: 13px;
+  width: 90%;
+}
+.selectedImageBtn {
+  border: none;
+  background: #fbde3f;
+  padding: 8px;
+  height: 33px;
+  font-size: 17px;
+  border-radius: 100px;
+  margin-bottom: 13px;
+  transition: background-color 0.3s ease-out;
+}
+
+.selectedImage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 80%;
+  right: 33%;
+  width: 124px;
+  height: 26px;
+  border: none;
+  border-radius: 17px;
+  background: rgba(217, 217, 217, 0.8);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.264px;
+}
