@@ -14,9 +14,9 @@ export default function Detail() {
   const [foodData, setFoodData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    getValue();
-  }, []);
+  // useEffect(() => {
+  //   getValue();
+  // }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;

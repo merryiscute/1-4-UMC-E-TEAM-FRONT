@@ -3,6 +3,7 @@ import '../styles/home.css';
 import Header from '../components/header'
 import Axios from "axios";
 import { Link } from 'react-router-dom';
+import Slider from '../components/slider';
 
 export function Home() {
 
@@ -30,7 +31,7 @@ useEffect(()=>{
         <div className='search_icon'><img src='img/Vector43.png'/></div>
         <div className='search_icon'><img src='img/Search.png'/></div>
       </div>
-      <div className='slider'></div>
+      <div className='slider'><Slider></Slider></div>
       <div className='contents_container'>
         <div className='contents'>
           {data.map((key,index)=>{
