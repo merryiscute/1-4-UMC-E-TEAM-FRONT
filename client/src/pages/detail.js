@@ -94,7 +94,10 @@ export default function Detail() {
           {combinationData.map((item) => (
             <Link
               key={item.id}
-              to={`/drink/${item.id}`}
+              to={{
+                pathname: `/Drink_detail/${item.id}`,
+                state: { itemId: item.id },
+              }}
               className="TableViewCellLink"
             >
               <div key={item.id} className="TableViewCellDiv">
@@ -130,7 +133,10 @@ export default function Detail() {
           {foodData.map((item) => (
             <Link
               key={item.id}
-              to={`/food/${item.id}`}
+              to={{
+                pathname: `/Food_detail/${item.id}`,
+                state: { itemId: item.id },
+              }}
               className="TableViewCellLink"
             >
               <div key={item.id} className="TableViewCellDiv">

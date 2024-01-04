@@ -2,7 +2,13 @@ import Header from '../components/header';
 import React from 'react';
 import Slider from '../components/slider';
 import '../styles/write_detail.css';
-export default function WriteDetail() {
+import { useLocation } from 'react-router-dom';
+
+export default function FoodDetail() {
+  const location = useLocation();
+  const foodData = location.state;
+  console.log(foodData);
+
   return (
     <div className="Container">
       <Header title={'술 꿀조합'}></Header>
