@@ -1,0 +1,9 @@
+.header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 20px;
+}

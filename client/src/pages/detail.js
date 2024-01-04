@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export default function Detail() {
-  return (
-    <div>Detail</div>
-  )
+  return <div>Detail clone test</div>;
 }
