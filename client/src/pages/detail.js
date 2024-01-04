@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 // components 임포트
 import Header from '../components/header';
@@ -9,14 +10,44 @@ import '../styles/detail.css';
 import '../styles/header.css';
 
 export default function Detail() {
+  const location = useLocation();
+  const data = location.state;
+  console.log(data);
+
   const [drinkData, setDrinkData] = useState(null);
   const [combinationData, setCombinationData] = useState([]);
   const [foodData, setFoodData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   getValue();
-  // }, []);
+  const axios = require('axios');
+  async function getValue() {
+    try {
+      const response = await Axios.get('http://3.39.93.237/liquor/1');
+      console.log(response.data.result);
+
+      const apiData = response.data.result;
+
+      setDrinkData({
+        id: apiData.liquor_Id,
+        title: apiData.name,
+        alcohol: apiData.percent,
+        price: apiData.price,
+        description: apiData.description,
+        image: apiData.picture,
+        tags: apiData.tag,
+      });
+
+      setCombinationData(apiData.liquorCombiPostDTOList);
+      setFoodData(apiData.liquorFoodPostDTOList);
+      setIsLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    getValue();
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -48,7 +79,10 @@ export default function Detail() {
           {combinationData.map((item) => (
             <Link
               key={item.id}
-              to={`/drink/${item.id}`}
+              to={{
+                pathname: `/Drink_detail/${item.id}`,
+                state: { itemId: item.id },
+              }}
               className="TableViewCellLink"
             >
               <div key={item.id} className="TableViewCellDiv">
@@ -84,7 +118,10 @@ export default function Detail() {
           {foodData.map((item) => (
             <Link
               key={item.id}
-              to={`/food/${item.id}`}
+              to={{
+                pathname: `/Food_detail/${item.id}`,
+                state: { itemId: item.id },
+              }}
               className="TableViewCellLink"
             >
               <div key={item.id} className="TableViewCellDiv">
