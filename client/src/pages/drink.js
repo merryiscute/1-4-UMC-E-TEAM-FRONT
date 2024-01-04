@@ -2,9 +2,25 @@ import React,{useEffect, useState} from 'react'
 import Header from '../components/header'
 import '../styles/drink.css'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 export function Drink() {
   
+  
+  const axios = require('axios');
+  async function getValue() {
+    try{
+        const response = await Axios.get('http://3.39.93.237/liquorCombiPost');
+        console.log(response.data.result)
+        setData(response.data.result)
+    }catch(e){console.log(e);}
+  }
+
+  useEffect(()=>{
+    getValue();
+  },[])   
+
+
   const [data,setData] = useState(
     [
       {
@@ -54,7 +70,7 @@ export function Drink() {
         <div className='contents'>
           {data.map((key,index)=>{
             return(
-              <Contents data={data[index]}></Contents>
+              <Link to="/write_detail"><Contents data={data[index]}></Contents></Link>
             )
           })}
         </div>

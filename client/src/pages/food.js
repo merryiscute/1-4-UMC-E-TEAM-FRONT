@@ -2,45 +2,25 @@ import React,{useEffect, useState} from 'react'
 import Header from '../components/header'
 import '../styles/food.css'
 
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Axios from 'axios';
 
 export default function Food() {
 
-  const [data,setData] = useState(
-    [
-      {
-          "liquorFood_Id": 4,
-          "title": "맛있따1",
-          "tag": "1231",
-          "likes": 30
-      },
-      {
-          "liquorFood_Id": 5,
-          "title": "맛있따2",
-          "tag": "1231",
-          "likes": 20
-      },
-      {
-          "liquorFood_Id": 6,
-          "title": "맛있따3",
-          "tag": "1231",
-          "likes": 10
-      }
-      ,
-      {
-          "liquorFood_Id": 5,
-          "title": "맛있따2",
-          "tag": "1231",
-          "likes": 20
-      },
-      {
-          "liquorFood_Id": 6,
-          "title": "맛있따3",
-          "tag": "1231",
-          "likes": 10
-      }
-  ]
-  )
+  const axios = require('axios');
+  async function getValue() {
+    try{
+        const response = await Axios.get('http://3.39.93.237/liquorFoodPost');
+        console.log(response.data.result)
+        setData(response.data.result)
+    }catch(e){console.log(e);}
+  }
+
+  useEffect(()=>{
+    getValue();
+  },[])   
+
+  const [data,setData] = useState([])
 
   return (
     <div className='food'>
@@ -55,7 +35,7 @@ export default function Food() {
         <div className='contents'>
           {data.map((key,index)=>{
             return(
-              <Contents data={data[index]}></Contents>
+              <Link to="/write_detail"><Contents data={data[index]}></Contents></Link>
             )
           })}
         </div>
