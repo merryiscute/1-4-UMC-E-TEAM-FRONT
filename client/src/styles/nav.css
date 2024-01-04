@@ -1,0 +1,28 @@
+.nav-container {
+  display: flex;
+  justify-content:center;
+  background-color: #FFB323;
+  width: 393px;
+  height: 72px;
+}  
+.drink-path, .food-path {
+  text-align: center;
+  flex: 1;
+}
+
+.drink-path, .home-path, .food-path {
+  margin-top :5px;
+}  
+
+.menu {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.nav-container a:link, 
+.nav-container a:visited, 
+.nav-container a:hover, 
+.nav-container a:active {
+  text-decoration: none;
+  color: black;  
+}
