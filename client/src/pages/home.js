@@ -1,9 +1,27 @@
 import React,{useEffect, useState} from 'react'
 import '../styles/home.css';
 import Header from '../components/header'
-
+import axios from 'axios';
 
 export function Home() {
+
+  const url = "3.39.93.237";
+
+const axios = require('axios');
+
+async function getValue() {
+  try{
+      const response = await axios.get(
+          '3.39.93.237/'
+      );
+      setTest2(response.data);
+  }catch(e){console.log(e);}
+}
+
+
+useEffect(()=>{
+  getValue();
+},[])   
 
   const [data,setData] = useState([
     {
