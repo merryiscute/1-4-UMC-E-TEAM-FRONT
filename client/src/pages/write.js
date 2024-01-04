@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // components 임포트
 import Header from '../components/header';
@@ -10,6 +11,8 @@ import '../styles/write.css';
 import '../styles/header.css';
 
 export default function Write() {
+  const history = useNavigate();
+
   const [title, setTitle] = useState('');
   const [drinkChecked, setDrinkChecked] = useState(false);
   const [foodChecked, setFoodChecked] = useState(false);
@@ -44,19 +47,19 @@ export default function Write() {
   const handleSelectMainChange = (value) => {
     setSelectedMainOptions(value || '전체');
     switch (value) {
-      case 'entire':
+      case '전체':
         setSelectedSubOptions(['전체']);
         break;
-      case 'soju':
+      case '소주':
         setSelectedSubOptions(['소주']);
         break;
-      case 'beer':
+      case '맥주':
         setSelectedSubOptions(['맥주']);
         break;
-      case 'liquor':
+      case '양주':
         setSelectedSubOptions(['와인', '진', '위스키', '데낄라']);
         break;
-      case 'etc':
+      case '기타':
         setSelectedSubOptions(['막걸리']);
         break;
       default:
@@ -113,31 +116,28 @@ export default function Write() {
 
     const formData = {
       title,
-      mainoptions: selectedMainOptions,
-      suboptions: selectedSubOptions,
-      ingredient,
       content,
-      image: selectedImage,
+      picture:
+        'https://file.hitejinro.com/hitejinro2016/upFiles/editor/sbQgOgJtnPSsTatVN0A0.jpg',
+      tag: ingredient,
+      name1: selectedMainOptions,
+      name2: selectedSubOptions[0],
     };
     console.log(formData);
 
     if (
       !formData.title ||
-      !formData.mainoptions ||
-      !formData.suboptions ||
-      !formData.ingredient ||
+      !formData.name1 ||
+      !formData.name2 ||
+      !formData.tag ||
       !formData.content ||
-      !formData.image
+      !formData.picture
     ) {
       alert('모든 필드를 입력해주세요.');
       return;
     }
 
-    const apiEndpoint = drinkChecked
-      ? '/api/write_detail/drink'
-      : '/api/write_detail/food';
-
-    fetch(apiEndpoint, {
+    fetch('http://3.39.93.237/liquorCombi', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -147,10 +147,17 @@ export default function Write() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Server response:', data);
+        handleCheckbox();
       })
       .catch((error) => {
         console.error('Error sending data to server:', error);
       });
+  };
+
+  const handleCheckbox = () => {
+    if (!drinkChecked) {
+      history.push(`/Food_detail`);
+    } else history.push(`/Drink_detail`);
   };
 
   return (
@@ -188,18 +195,17 @@ export default function Write() {
         </label>
       </div>
       <div className="Guide">메인이 되는 주종을 선택해주세요.</div>
-      <Slider></Slider>
-      {/* <div className="optionDiv">
+      <div className="optionDiv">
         <div className="selectAlcohol">
           <select
             value={selectedMainOptions}
             onChange={(e) => handleSelectMainChange(e.target.value)}
           >
-            <option value="entire">전체</option>
-            <option value="soju">소주</option>
-            <option value="beer">맥주</option>
-            <option value="liquor">양주</option>
-            <option value="etc">기타</option>
+            <option value="전체">전체</option>
+            <option value="소주">소주</option>
+            <option value="맥주">맥주</option>
+            <option value="양주">양주</option>
+            <option value="기타">기타</option>
           </select>
           <select
             value={selectedSubOptions}
@@ -215,8 +221,8 @@ export default function Write() {
               <option value={selectedSubOptions}>{selectedSubOptions}</option>
             )}
           </select>
-        </div> */}
-      {/* </div> */}
+        </div>
+      </div>
       <input
         value={ingredient}
         type="text"

@@ -42,12 +42,7 @@ export function Home() {
         <div className="contents">
           {data.map((key, index) => {
             return (
-              <Link
-                to={{
-                  pathname: '/detail',
-                  state: { liquorId: data[index].liquor_Id },
-                }}
-              >
+              <Link to={'/detail'} state={data[index].liquor_Id}>
                 <Contents data={data[index]}></Contents>
               </Link>
             );
