@@ -38,6 +38,23 @@ export function Home() {
       "tag": "#맥주 #라거",
       "liquor_Id": 2
   }
+  ,
+    {
+      "name": "켈리",
+      "percent": "도수: 10%",
+      "price": "12000원",
+      "volume": "500ml",
+      "tag": "#맥주 #라거",
+      "liquor_Id": 1
+  },
+  {
+      "name": "카스",
+      "percent": "도수: 12%",
+      "price": "1200원",
+      "volume": "500ml",
+      "tag": "#맥주 #라거",
+      "liquor_Id": 2
+  }
 ])
   return (
     <div className='home'>
