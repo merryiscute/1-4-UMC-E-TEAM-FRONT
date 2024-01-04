@@ -1,20 +1,17 @@
 import React,{useEffect, useState} from 'react'
 import '../styles/home.css';
 import Header from '../components/header'
-import axios from 'axios';
+import Axios from "axios";
+import { Link } from 'react-router-dom';
 
 export function Home() {
 
-  const url = "3.39.93.237";
-
 const axios = require('axios');
-
 async function getValue() {
   try{
-      const response = await axios.get(
-          '3.39.93.237/'
-      );
-      setTest2(response.data);
+      const response = await Axios.get('http://3.39.93.237/liquor');
+      console.log(response.data.result)
+      setData(response.data.result)
   }catch(e){console.log(e);}
 }
 
@@ -23,57 +20,8 @@ useEffect(()=>{
   getValue();
 },[])   
 
-  const [data,setData] = useState([
-    {
-        "name": "켈리",
-        "percent": "도수: 10%",
-        "price": "12000원",
-        "volume": "500ml",
-        "tag": "#맥주 #라거",
-        "liquor_Id": 1
-    },
-    {
-        "name": "카스",
-        "percent": "도수: 12%",
-        "price": "1200원",
-        "volume": "500ml",
-        "tag": "#맥주 #라거",
-        "liquor_Id": 2
-    },
-    {
-      "name": "켈리",
-      "percent": "도수: 10%",
-      "price": "12000원",
-      "volume": "500ml",
-      "tag": "#맥주 #라거",
-      "liquor_Id": 1
-  },
-  {
-      "name": "카스",
-      "percent": "도수: 12%",
-      "price": "1200원",
-      "volume": "500ml",
-      "tag": "#맥주 #라거",
-      "liquor_Id": 2
-  }
-  ,
-    {
-      "name": "켈리",
-      "percent": "도수: 10%",
-      "price": "12000원",
-      "volume": "500ml",
-      "tag": "#맥주 #라거",
-      "liquor_Id": 1
-  },
-  {
-      "name": "카스",
-      "percent": "도수: 12%",
-      "price": "1200원",
-      "volume": "500ml",
-      "tag": "#맥주 #라거",
-      "liquor_Id": 2
-  }
-])
+  const [data,setData] = useState([]);
+
   return (
     <div className='home'>
       <Header title={"한잔해"}></Header>
@@ -87,7 +35,7 @@ useEffect(()=>{
         <div className='contents'>
           {data.map((key,index)=>{
             return(
-              <Contents data={data[index]}></Contents>
+              <Link to={{pathname:'/detail', state:data[index].liquor_Id}}><Contents data={data[index]}></Contents></Link>
             )
           })}
         </div>

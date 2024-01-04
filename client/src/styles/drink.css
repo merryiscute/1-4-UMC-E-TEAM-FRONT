@@ -36,6 +36,7 @@
 
 
 .drink .contents_container{
+    
     overflow: scroll;
     margin-left: 13px;
     margin-top: 13.6px;
@@ -47,18 +48,25 @@
 
 .drink .contents_container .contents{
     
+    text-decoration: none; /* 링크의 밑줄 제거 */  color: inherit; /* 링크의 색상 제거 */
+
+    
     margin-left: 25px;
     display: grid;
     grid-template-columns: 159px 159px;
 }
 
 .drink .contents .img{
+    
+    text-decoration: none; /* 링크의 밑줄 제거 */  color: inherit; /* 링크의 색상 제거 */
     margin-top: 20px;
     width: 147px; 
     height: 166px;
 }
 
 .drink .contents .data_container{
+    
+    text-decoration: none; /* 링크의 밑줄 제거 */  color: inherit; /* 링크의 색상 제거 */
     margin-left: 4px;
     width: 150px;
     height: 60px;
@@ -67,17 +75,23 @@
 
 
 .drink .contents .title{
+    
+    text-decoration: none; /* 링크의 밑줄 제거 */  color: inherit; /* 링크의 색상 제거 */
     font-size: 15px;
     font-weight: bold;   
 }
 
 
 .drink .contents .likes{
+    
+    text-decoration: none; /* 링크의 밑줄 제거 */  color: inherit; /* 링크의 색상 제거 */
     font-size: 12px;
     font-weight: bold;   
 }
 
 .contents .tag{
+    
+    text-decoration: none; /* 링크의 밑줄 제거 */  color: inherit; /* 링크의 색상 제거 */
     font-size: 10px;
     font-weight: bold; 
 }
